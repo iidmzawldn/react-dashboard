@@ -1,9 +1,8 @@
 const Footer = () => {
   return (
     <footer className="main-footer">
-      <div className="float-right d-none d-sm-inline">Anything you want</div>
       <strong>
-        Copyright © 2014-2024 <a href="https://adminlte.io">AdminLTE.io</a>.
+        Copyright © 2024 <a href="#">IT DJUANSIH</a>.
       </strong>{" "}
       All rights reserved.
     </footer>

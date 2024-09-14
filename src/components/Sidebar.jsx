@@ -1,31 +1,17 @@
+import { NavLink } from "react-router-dom";
+import Logo from "../assets/img/logo.png";
+
 const Sidebar = () => {
   return (
     <aside className="main-sidebar sidebar-dark-primary elevation-4">
       <a href="/" className="brand-link">
-        <img
-          src="dist/img/AdminLTELogo.png"
-          alt="AdminLTE Logo"
-          className="brand-image img-circle elevation-3"
-          style={{ opacity: ".8" }}
-        />
-        <span className="brand-text font-weight-light">AdminLTE 3</span>
+        <img src={Logo} alt="RSU Logo" className="brand-image img-circle" />
+        <span className="brand-text font-weight-light">
+          <b>RS Djuansih</b>
+        </span>
       </a>
       <div className="sidebar">
-        <div className="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div className="image">
-            <img
-              src="dist/img/user2-160x160.jpg"
-              className="img-circle elevation-2"
-              alt="User Image"
-            />
-          </div>
-          <div className="info">
-            <a href="#" className="d-block">
-              Alexander Pierce
-            </a>
-          </div>
-        </div>
-        <div className="form-inline">
+        <div className="form-inline mt-2">
           <div className="input-group" data-widget="sidebar-search">
             <input
               className="form-control form-control-sidebar"
@@ -47,22 +33,38 @@ const Sidebar = () => {
             role="menu"
             data-accordion="false"
           >
-            <li className="nav-item menu-open">
-              <a href="/" className="nav-link active">
+            <li className="nav-item">
+              <NavLink
+                to="/"
+                className={(navActive) =>
+                  navActive.isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 <i className="nav-icon fas fa-tachometer-alt" />
-                <p>
-                  Dashboard
-                </p>
-              </a>
+                <p>Dashboard</p>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a href="/about" className="nav-link">
+              <NavLink
+                to="/about"
+                className={(navActive) =>
+                  navActive.isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 <i className="nav-icon fas fa-th" />
-                <p>
-                  About
-                  <span className="right badge badge-danger">New</span>
-                </p>
-              </a>
+                <p>About</p>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/data"
+                className={(navActive) =>
+                  navActive.isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                <i className="nav-icon fas fa-folder" />
+                <p>Data</p>
+              </NavLink>
             </li>
           </ul>
         </nav>

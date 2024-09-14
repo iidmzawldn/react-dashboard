@@ -1,4 +1,4 @@
-const Dashboard = () => {
+const Data = () => {
   return (
     <>
       <div className="content-wrapper">
@@ -6,14 +6,14 @@ const Dashboard = () => {
           <div className="container-fluid">
             <div className="row mb-2">
               <div className="col-sm-6">
-                <h1 className="m-0">Dashboard Page</h1>
+                <h1 className="m-0">Data Page</h1>
               </div>
               <div className="col-sm-6">
                 <ol className="breadcrumb float-sm-right">
                   <li className="breadcrumb-item">
-                    <a href="#">Home</a>
+                    <a href="#">Dashboard</a>
                   </li>
-                  <li className="breadcrumb-item active">Starter Page</li>
+                  <li className="breadcrumb-item active">Data</li>
                 </ol>
               </div>
             </div>
@@ -25,7 +25,7 @@ const Dashboard = () => {
               <div className="col-lg-12">
                 <div className="card card-primary card-outline">
                   <div className="card-header">
-                    <h5 className="m-0">Dashboard</h5>
+                    <h5 className="m-0">Data</h5>
                   </div>
                   <div className="card-body">
                     <h6 className="card-title">Special title treatment</h6>
@@ -47,4 +47,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Data;

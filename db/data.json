@@ -1,0 +1,14 @@
+[
+    { "month": "Jan", "Income": 1210 },
+    { "month": "Feb", "Income": 1920 },
+    { "month": "Mar", "Income": 1808 },
+    { "month": "Apr", "Income": 902 },
+    { "month": "Mei", "Income": 990 },
+    { "month": "Jun", "Income": 2000 },
+    { "month": "Jul", "Income": 2600 },
+    { "month": "Agu", "Income": 888 },
+    { "month": "Sep", "Income": 990 },
+    { "month": "Okt", "Income": 2100 },
+    { "month": "Nov", "Income": 1230 },
+    { "month": "Des", "Income": 1500 }
+]

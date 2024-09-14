@@ -1,27 +1,34 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Sidebar from "./components/Sidebar";
-import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
 import About from "./pages/About";
-import NotFound from "./pages/NotFound";
+import DashboardLayouts from "./layouts/DashboardLayouts";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Data from "./pages/Data";
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <DashboardLayouts />,
+    children: [
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: "about",
+        element: <About />
+      },
+      {
+        path: "data",
+        element: <Data />
+      }
+    ]
+  }
+])
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
-      <Sidebar />
-      <Footer />
-    </>
-  );
+  return <RouterProvider router={router} />
 }
 
 export default App;
