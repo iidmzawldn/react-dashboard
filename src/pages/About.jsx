@@ -1,4 +1,13 @@
+import "chart.js/auto";
+import { Radar } from "react-chartjs-2";
+import sourceData from "../data/abiltyData.json";
+
 const About = () => {
+  const options = {
+    responsive: true,
+    maintainAspectRatio: true,
+    aspectRatio: 2,
+  };
   return (
     <>
       <div className="content-wrapper">
@@ -22,20 +31,59 @@ const About = () => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-lg-12">
+              <div className="col-lg-6">
                 <div className="card card-primary card-outline">
                   <div className="card-header">
-                    <h5 className="m-0">About</h5>
+                    <h5 className="m-0">Ability</h5>
                   </div>
                   <div className="card-body">
-                    <h6 className="card-title">Special title treatment</h6>
-                    <p className="card-text">
-                      With supporting text below as a natural lead-in to
-                      additional content.
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                      Go somewhere
-                    </a>
+                    <div className="chart-container">
+                      <Radar
+                        data={{
+                          labels: sourceData.map((data) => data.label),
+                          datasets: [
+                            {
+                              label: "Count",
+                              data: sourceData.map((data) => data.value),
+                              backgroundColor: [
+                                "rgba(201, 104, 104, 0.8)",
+                                "rgba(250, 223, 161, 0.8)",
+                                "rgba(126, 172, 181, 0.8)",
+                              ],
+                              borderRadius: 5,
+                            },
+                          ],
+                          options: { options },
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="card card-primary card-outline">
+                  <div className="card-header">
+                    <h5 className="m-0">Tabel</h5>
+                  </div>
+                  <div className="card-body">
+                    <div className="table-responsive">
+                      <table className="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Label</th>
+                            <th>Value</th>
+                          </tr>
+                        </thead>
+                        {sourceData.map((sourceData, i) => (
+                        <tbody key={i}>
+                          <tr>
+                            <td>{sourceData.label}</td>
+                            <td>{sourceData.value}</td>
+                          </tr>
+                        </tbody>
+                        ))}
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1,0 +1,26 @@
+[
+    {
+        "label": "Passing",
+        "value": 85
+    },
+    {
+        "label": "Finishing",
+        "value": 80
+    },
+    {
+        "label": "Pysically",
+        "value": 60
+    },
+    {
+        "label": "Defending",
+        "value": 40
+    },
+    {
+        "label": "Speed",
+        "value": 73
+    },
+    {
+        "label": "Dribbling",
+        "value": 90
+    }
+]

@@ -1,12 +1,12 @@
 import "chart.js/auto";
-import { Bar, Doughnut } from "react-chartjs-2";
+import { Bar, Doughnut, Line, Radar } from "react-chartjs-2";
 import sourceData from "../data/sourceData.json";
 
 const Home = () => {
   const options = {
     responsive: true,
     maintainAspectRatio: true,
-    aspectRatio: 2
+    aspectRatio: 2,
  };
 
   return (
@@ -67,8 +67,66 @@ const Home = () => {
                     <h5 className="m-0">Chart 2</h5>
                   </div>
                   <div className="card-body">
-                    <div className="chart-container" style={{ position: "relative", height: "40vh", width: "80vh" }}>
+                    <div className="chart-container">
+                      <Line
+                        data={{
+                          labels: sourceData.map((data) => data.label),
+                          datasets: [
+                            {
+                              label: "Count",
+                              data: sourceData.map((data) => data.value),
+                              backgroundColor: [
+                                "rgba(201, 104, 104, 0.8)",
+                                "rgba(250, 223, 161, 0.8)",
+                                "rgba(126, 172, 181, 0.8)",
+                              ],
+                              borderRadius: 5,
+                            },
+                          ],
+                          options : {options}
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="card card-primary card-outline">
+                  <div className="card-header">
+                    <h5 className="m-0">Chart 2</h5>
+                  </div>
+                  <div className="card-body">
+                    <div className="chart-container">
                       <Doughnut
+                        data={{
+                          labels: sourceData.map((data) => data.label),
+                          datasets: [
+                            {
+                              label: "Count",
+                              data: sourceData.map((data) => data.value),
+                              backgroundColor: [
+                                "rgba(201, 104, 104, 0.8)",
+                                "rgba(250, 223, 161, 0.8)",
+                                "rgba(126, 172, 181, 0.8)",
+                              ],
+                              borderRadius: 5,
+                            },
+                          ],
+                          options : {options}
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="card card-primary card-outline">
+                  <div className="card-header">
+                    <h5 className="m-0">Chart 2</h5>
+                  </div>
+                  <div className="card-body">
+                    <div className="chart-container">
+                      <Radar
                         data={{
                           labels: sourceData.map((data) => data.label),
                           datasets: [
